@@ -1,0 +1,48 @@
+{
+  "data_path": "data/data_entrainement.csv",
+  "model_used_for_clusters": "Hierarchical",
+  "n_total_retailers": 1788,
+  "n_eligible_retailers": 1414,
+  "n_games": 9,
+  "top_game_share_pct_of_net_sales": 14.870074229966107,
+  "mrr_by_method": {
+    "global": {
+      "mrr": 0.39356660155811507,
+      "ci95": [
+        0.37878651130419166,
+        0.4086855860330931
+      ],
+      "n": 1414
+    },
+    "intra_cluster": {
+      "mrr": 0.43235923082104133,
+      "ci95": [
+        0.41676653953660675,
+        0.4482959099481377
+      ],
+      "n": 1414
+    },
+    "lift": {
+      "mrr": 0.4049283244650996,
+      "ci95": [
+        0.38967875805437696,
+        0.4201293471183853
+      ],
+      "n": 1414
+    }
+  },
+  "wilcoxon_paired_tests": {
+    "global_vs_intra_cluster": {
+      "statistic": 213922.5,
+      "p_value": 0.0028470165519909442
+    },
+    "global_vs_lift": {
+      "statistic": 372048.0,
+      "p_value": 0.6025267332436304
+    },
+    "intra_cluster_vs_lift": {
+      "statistic": 107637.0,
+      "p_value": 3.5514662670322033e-25
+    }
+  }
+}

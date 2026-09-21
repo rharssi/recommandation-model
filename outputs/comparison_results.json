@@ -1,0 +1,51 @@
+{
+  "comparison_k": 3,
+  "best_model": "Hierarchical",
+  "best_params": {
+    "k": 3
+  },
+  "full_results": [
+    {
+      "model": "KMeans",
+      "params": "{\"k\": 3}",
+      "execution_time_sec": 0.0306,
+      "silhouette": 0.24080579019064868,
+      "davies_bouldin": 1.3314698789688482,
+      "calinski_harabasz": 424.5356367768562
+    },
+    {
+      "model": "GMM",
+      "params": "{\"n_components\": 3}",
+      "execution_time_sec": 0.0437,
+      "silhouette": 0.1618789172494009,
+      "davies_bouldin": 2.2773371777783438,
+      "calinski_harabasz": 275.830470338551
+    },
+    {
+      "model": "Hierarchical",
+      "params": "{\"k\": 3}",
+      "execution_time_sec": 0.0585,
+      "silhouette": 0.26413995070071794,
+      "davies_bouldin": 1.2029036341583244,
+      "calinski_harabasz": 393.584811413846
+    }
+  ],
+  "reference_free_k_not_used_for_selection": {
+    "KMeans": {
+      "free_optimum": 4,
+      "criterion": "silhouette_max"
+    },
+    "GMM": {
+      "free_optimum": 8,
+      "criterion": "bic_min"
+    },
+    "Hierarchical": {
+      "free_optimum": 3,
+      "criterion": "silhouette_max"
+    }
+  },
+  "business_decisions": [
+    "CLUSTERING-K-001",
+    "CLUSTERING-K-002"
+  ]
+}
