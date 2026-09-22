@@ -1,23 +1,6 @@
 """Compare les 3 methodes de recommandation (popularite globale, popularite
 intra-cluster, score de lift) par validation leave-one-out.
 
-Pour chaque retailer disposant d'au moins 2 jeux a ventes nettes positives,
-son jeu le plus vendu est masque (mis a 0 dans une ligne "override" du
-pivot retailer x jeu), puis chacune des 3 methodes de common.RECO_METHODS
-est appelee pour tenter de le retrouver parmi ses recommandations. Le score
-retenu est le Mean Reciprocal Rank (MRR) : 1 / rang du jeu masque dans le
-classement retourne (classement complet, sans troncature a top_n), 0 si le
-jeu masque n'apparait pas parmi les candidats "sous-exploites" apres
-masquage (cas rare, cf. _underexploited_mask).
-
-Menee "hors du pipeline de production" (cf. decisions.RECO_METHOD_DECISION) :
-ce script ne modifie ni n'entraine le modele livre en production
-(Final_recommendation.py), il sert uniquement a documenter/reproduire le
-choix de methode de recommandation avec des chiffres a jour sur le jeu de
-donnees actuel (data/data_entrainement.csv), et a remplacer l'ancienne
-analyse (1364/1436 retailers, ~93,5% de concentration) dont le script
-source n'a pas ete retrouve.
-"""
 import json
 import os
 import warnings
